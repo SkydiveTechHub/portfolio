@@ -909,7 +909,7 @@ section.active {
 
   .home-detail .btn-sci .sci {
     margin-left: 0;
-    margin-bottom: 2rem;
+    /* margin-bottom: 2rem; */
   }
 
   .contact-box form {
