@@ -56,14 +56,7 @@ header.active {
   }
 }
 
-.logo {
-  /* font-size: 3rem;
-  color: var(--white-color);
-  font-weight: 700; */
-}
-
 .logo img {
-  /* background-color: red; */
   width: 5rem;
   height: 5rem;
 }
@@ -615,6 +608,12 @@ section.active {
   border-radius: 50%;
   background: var(--second-bg-color);
   transition: 0.5s;
+}
+
+.portfolio-box .live-github p {
+  margin-left: 6rem;
+  /* margin-top: 3rem; */
+  color: var(--main-color);
 }
 
 .portfolio-box .live-github a:hover {
