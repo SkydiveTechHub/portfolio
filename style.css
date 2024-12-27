@@ -895,8 +895,12 @@ section.active {
   .resume-box h2,
   .resume-box .heading,
   .resume-box .desc,
-  .resume-detail.about .resume-item {
+  .resume-detail.about {
     text-align: center;
+  }
+
+  .resume-item {
+    text-align: left;
   }
 
   .home-detail .btn.sci {
