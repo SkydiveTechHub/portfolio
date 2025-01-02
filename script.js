@@ -1,4 +1,4 @@
-const navLinks = document.querySelectorAll("header nav a");
+const navLinks = document.querySelectorAll("header nav a, header .nav-2 a");
 const logoLink = document.querySelector(".logo");
 const sections = document.querySelectorAll("section");
 const menuIcon = document.querySelector("#menu-icon");
@@ -82,10 +82,6 @@ const transitionPage = (idx) => {
     navLinks.forEach((link) => link.classList.remove("active"));
     navLinks[idx].classList.add("active");
   }, 1100);
-
-  // Reset the mobile navigation menu to the default state
-  // menuIcon.classList.remove("bx-x");
-  // navbar.classList.remove("active");
 };
 
 // Add click event listeners to navigation links for transitioning pages
