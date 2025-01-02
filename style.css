@@ -946,9 +946,7 @@ section.active {
   }
 
   section {
-    height: 100vh;
-    /* padding-bottom: 11rem; */
-    /* background: red; */
+    padding-bottom: 11rem;
   }
 
   nav {
@@ -962,7 +960,6 @@ section.active {
     margin-left: 0.5rem;
     transition: 0.5s;
     padding: 0 0.5rem;
-    /* background-color: red; */
   }
 
   .nav-2 {
@@ -977,8 +974,6 @@ section.active {
     padding-top: 3rem;
     border-top: 0.1rem solid rgba(0, 0, 0, -2);
     box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, -2);
-    /* background: red; */
-    /* z-index: 1; */
   }
 
   .nav-2 .nav-2-container {
@@ -989,7 +984,6 @@ section.active {
     padding: 1rem 0;
     height: 9rem;
     padding: 0;
-    /* background: red; */
   }
 
   .nav-2 .nav-2-container i {
@@ -1014,8 +1008,6 @@ section.active {
   }
 
   .nav-2 a:hover,
-  .nav-2 i .nav-2 a:hover,
-  .nav-2 i .nav-2 a.active,
   .nav-2 a.active {
     color: var(--main-color);
   }
