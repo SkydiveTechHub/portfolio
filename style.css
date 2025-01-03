@@ -34,7 +34,8 @@ header {
   top: 0;
   left: 0;
   width: 100%;
-  padding: 2rem 9%;
+  padding: 2rem 0;
+  padding-left: 10rem;
   background: var(--bg-color);
   display: flex;
   justify-content: space-between;
@@ -74,10 +75,8 @@ nav a {
 }
 
 header .btn i {
-  font-size: 2rem;
+  font-size: 1.5rem;
   text-align: center;
-  /* padding: 1rem; */
-  /* color: var(--main-color); */
 }
 
 .header-icon i {
@@ -88,8 +87,7 @@ header .btn i {
 }
 
 nav a:hover,
-nav a.active,
-.nav-2 a:active i:hover {
+nav a.active {
   color: var(--main-color);
 }
 
@@ -838,6 +836,7 @@ section.active {
 @media screen and (max-width: 768px) {
   #menu-icon {
     display: block;
+    margin-left: 60%;
   }
 
   nav {
@@ -970,7 +969,7 @@ section.active {
     top: 89%;
     left: 0;
     width: 100%;
-    height: 9rem;
+    height: 9.5rem;
     padding-top: 3rem;
     border-top: 0.1rem solid rgba(0, 0, 0, -2);
     box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, -2);
@@ -990,7 +989,7 @@ section.active {
     font-size: 2rem;
     position: absolute;
     top: 5%;
-    left: 37%;
+    left: 32%;
     align-items: center;
   }
 
@@ -1002,13 +1001,9 @@ section.active {
     display: block;
   }
 
-  .nav-2 .nav-2-container a {
-    font-size: 2rem;
-    padding: 0;
-  }
-
   .nav-2 a:hover,
-  .nav-2 a.active {
+  .nav-2 a.active,
+  .nav-2 i.active {
     color: var(--main-color);
   }
 }
