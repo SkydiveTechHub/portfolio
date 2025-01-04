@@ -1,5 +1,5 @@
 const navLinks = document.querySelectorAll("header nav a");
-const nav2Containers = document.querySelectorAll("header .nav-2-container");
+const nav2Containers = document.querySelectorAll("footer .nav-2-container");
 const sections = document.querySelectorAll("section");
 const logoLink = document.querySelector(".logo");
 const menuIcon = document.querySelector("#menu-icon");
@@ -12,10 +12,27 @@ const resetActiveStateWithBars = () => {
   const barsBox = document.querySelector(".bars-box");
   const header = document.querySelector("header");
 
+  if (!barsBox || !header) {
+    console.error("barsBox or header is missing in the DOM!");
+    return;
+  }
+
+  // First, hide the header and sections (before bar animation)
+  header.classList.remove("active");
+  sections.forEach((section) => section.classList.remove("active"));
+
   // Trigger hide bars animation
   barsBox.classList.remove("active");
-  header.classList.remove("active");
 
+  // Reapply animations to ensure they are triggered
+  const bars = barsBox.querySelectorAll(".bar");
+  bars.forEach((bar) => {
+    bar.style.animation = "none"; // Remove animation temporarily
+    void bar.offsetHeight; // Force reflow/repaint
+    bar.style.animation = ""; // Reapply animation
+  });
+
+  // Set a timeout to delay the show bars animation to give time for hide bars animation
   setTimeout(() => {
     // Reset all active states after the animation completes
     navLinks.forEach((link) => link.classList.remove("active"));
@@ -23,12 +40,11 @@ const resetActiveStateWithBars = () => {
       container.querySelector("a").classList.remove("active");
       container.querySelector("i").classList.remove("active");
     });
-    sections.forEach((section) => section.classList.remove("active"));
 
-    // Trigger show bars animation
+    // Trigger show bars animation after delay
     barsBox.classList.add("active");
-    header.classList.add("active");
-  }, 1100);
+    header.classList.add("active"); // Re-add the 'active' class to the header
+  }, 1100); // Delay the show bars animation to allow hide bars to finish (matches hide bars duration)
 };
 
 // Function to set active state for a specific index
@@ -65,7 +81,7 @@ const addClickListeners = (links, isNav2 = false) => {
         setActiveState(idx);
         // Hide the navbar after section load
         navbar.classList.remove("active"); // Hide the navbar after clicking a link
-      }, 1100); // Set active state after animation
+      }, 1100); // Set active state after animation (matches animation duration)
     });
   });
 };
@@ -75,6 +91,26 @@ addClickListeners(navLinks);
 addClickListeners(
   Array.from(nav2Containers).map((container) => container.querySelector("a"))
 );
+
+// Add click event listeners for `nav-2` icons
+nav2Containers.forEach((container, idx) => {
+  const nav2Icon = container.querySelector("i");
+
+  nav2Icon.addEventListener("click", (event) => {
+    event.preventDefault(); // Prevent default behavior
+
+    // Skip if the clicked icon corresponds to the current active section
+    if (idx === currentActiveIndex) {
+      return;
+    }
+
+    resetActiveStateWithBars();
+    setTimeout(() => {
+      setActiveState(idx);
+      navbar.classList.remove("active"); // Hide the navbar after clicking an icon
+    }, 1100); // Set active state after animation (matches animation duration)
+  });
+});
 
 // Toggle menu icon and navbar visibility
 menuIcon.addEventListener("click", () => {

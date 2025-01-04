@@ -50,6 +50,18 @@ header.active {
   animation-delay: 1.2s;
 }
 
+footer {
+  background: var(--bg-color);
+  visibility: hidden;
+  opacity: 0;
+  display: none;
+}
+
+footer.active {
+  animation: show-header 1.5s linear forwards;
+  animation-delay: 1.2s;
+}
+
 @keyframes show-header {
   100% {
     visibility: visible;
@@ -70,9 +82,9 @@ nav a {
   transition: 0.5s;
 }
 
-.nav-2 {
-  display: none;
-}
+/* .nav-2 {
+  
+} */
 
 header .btn i {
   font-size: 1.5rem;
@@ -945,12 +957,25 @@ section.active {
     display: none;
   }
 
+  .logo img {
+    width: 4rem;
+    height: 4rem;
+  }
+
+  .header-icon i {
+    font-size: 3.5rem;
+  }
+
   section {
     padding-bottom: 10rem;
   }
 
   nav {
     display: none;
+  }
+
+  footer {
+    display: block;
   }
 
   .nav-2 .nav-2-container a {
@@ -967,14 +992,15 @@ section.active {
     justify-content: space-around;
     align-items: center;
     position: fixed;
-    top: 90%;
+    bottom: 0;
     left: 0;
     width: 100%;
-    height: 12rem;
-    padding-top: 3rem;
+    height: 9rem;
+    padding-top: 2rem;
     border-top: 0.1rem solid rgba(0, 0, 0, -2);
-    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, -2);
-    z-index: 100;
+    /* box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, -2); */
+    background: var(--bg-color);
+    z-index: 1;
   }
 
   .nav-2 .nav-2-container {
