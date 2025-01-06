@@ -235,3 +235,142 @@ arrowLeft.addEventListener("click", () => {
 
   activePortfolio();
 });
+
+// Existing Variables and Elements
+const sliderContainer = document.querySelector(".slider-container");
+const sliderItems = document.querySelectorAll(".slider-item");
+const prevButton = document.querySelector(".slider-prev");
+const nextButton = document.querySelector(".slider-next");
+const paginationContainer = document.querySelector(".slider-pagination");
+const popup = document.querySelector(".blog-popup");
+const popupContent = document.querySelector(".blog-text");
+const closePopup = document.querySelector(".close-popup");
+const itemsPerSlide = 3; // Number of images visible at once
+let currentIndex = 0;
+
+// Function to update the slider position and active class
+const updateSliderPosition = () => {
+  const totalSlides = sliderItems.length;
+
+  // Calculate the offset to center the active image
+  const offset = (itemsPerSlide - 1) / 2;
+
+  // Move the slider
+  const translateValue =
+    Math.max(0, currentIndex - offset) * (100 / itemsPerSlide);
+  sliderContainer.style.transform = `translateX(-${translateValue}%)`;
+
+  // Update active class
+  sliderItems.forEach((item, index) => {
+    item.classList.toggle("active", index === currentIndex);
+  });
+
+  // Disable buttons when at the beginning or end
+  prevButton.disabled = currentIndex === 0;
+  nextButton.disabled = currentIndex === totalSlides - 1;
+
+  // Update pagination active dot
+  updatePaginationDots();
+};
+
+// Function to update pagination dots
+const updatePaginationDots = () => {
+  const dots = paginationContainer.querySelectorAll(".pagination-dot");
+  dots.forEach((dot, index) => {
+    dot.classList.toggle("active", index === currentIndex);
+  });
+};
+
+// Function to create pagination dots
+const createPagination = () => {
+  const totalSlides = sliderItems.length;
+  for (let i = 0; i < totalSlides; i++) {
+    const dot = document.createElement("button");
+    dot.classList.add("pagination-dot");
+    if (i === currentIndex) dot.classList.add("active");
+
+    // Add click event to navigate to the corresponding slide
+    dot.addEventListener("click", () => {
+      currentIndex = i;
+      updateSliderPosition();
+    });
+
+    paginationContainer.appendChild(dot);
+  }
+};
+
+// Event listeners for navigation buttons
+prevButton.addEventListener("click", () => {
+  if (currentIndex > 0) {
+    currentIndex--;
+    updateSliderPosition();
+  }
+});
+
+nextButton.addEventListener("click", () => {
+  if (currentIndex < sliderItems.length - 1) {
+    currentIndex++;
+    updateSliderPosition();
+  }
+});
+
+// Add click event for "Read More" buttons
+sliderItems.forEach((item) => {
+  const readMoreButton = item.querySelector(".read-more-btn");
+  readMoreButton.addEventListener("click", () => {
+    const blogContent = item.getAttribute("data-blog");
+    popupContent.textContent = blogContent;
+    popup.classList.add("show");
+  });
+});
+
+// Close popup event
+closePopup.addEventListener("click", () => {
+  popup.classList.remove("show");
+});
+
+// Close popup when clicking outside the popup content
+popup.addEventListener("click", (event) => {
+  if (event.target === popup) {
+    popup.classList.remove("show");
+  }
+});
+
+// Initialize the slider
+window.addEventListener("load", () => {
+  updateSliderPosition();
+  createPagination();
+});
+
+// Fetch all the Read More buttons
+const readMoreButtons = document.querySelectorAll(".read-more-btn");
+
+// Add click listeners to each button
+readMoreButtons.forEach((button) => {
+  button.addEventListener("click", (e) => {
+    const sliderItem = e.target.closest(".slider-item");
+    const blogContent = sliderItem.querySelector(
+      ".hidden-blog-content"
+    ).innerHTML;
+
+    const popup = document.querySelector(".blog-popup");
+    const popupContent = popup.querySelector(".blog-text");
+
+    // Set the popup content and show the popup
+    popupContent.innerHTML = blogContent; // Load the blog content
+    popup.style.display = "block"; // Display the popup
+  });
+});
+
+// Close the popup when the close button is clicked
+const closePopupButton = document.querySelector(".close-popup");
+closePopupButton.addEventListener("click", () => {
+  const popup = document.querySelector(".blog-popup");
+
+  // Hide the popup
+  popup.style.display = "none";
+
+  // Clear popup content to avoid lingering content when reopened
+  const popupContent = popup.querySelector(".blog-text");
+  popupContent.innerHTML = "";
+});
