@@ -245,7 +245,7 @@ const paginationContainer = document.querySelector(".slider-pagination");
 const popup = document.querySelector(".blog-popup");
 const popupContent = document.querySelector(".blog-text");
 const closePopup = document.querySelector(".close-popup");
-const itemsPerSlide = 3; // Number of images visible at once
+const itemsPerSlide = 2; // Number of images visible at once
 let currentIndex = 0;
 
 // Function to update the slider position and active class
