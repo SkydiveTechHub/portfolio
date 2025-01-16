@@ -1,0 +1,254 @@
+@media (max-width: 1200px) {
+  .banner {
+    background: #fff !important;
+  }
+}
+
+@media (max-width: 992px) {
+  #navbar {
+    background: #fff;
+  }
+  #navbar.nav-text-white .nav-link {
+    color: #111;
+  }
+  /* #navbar.nav-text-white .mobile-logo {
+    display: block;
+  }
+  #navbar.nav-text-white .hidden-logo {
+    display: none;
+  } */
+  .navbar-toggler {
+    color: #111;
+  }
+  .dropdown-menu {
+    display: none;
+    width: 100%;
+    text-align: center;
+  }
+  .header-padding {
+    padding: 0px 30px;
+  }
+  .banner {
+    background: #fff !important;
+  }
+
+  .case-timeline-dot {
+    display: none;
+  }
+  .case-timeline-divider {
+    display: none;
+  }
+
+  .testimonial-wrap {
+    margin-left: 0px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  #navbar {
+    background: #fff;
+  }
+  #navbar.nav-text-white .nav-link {
+    color: #111;
+  }
+  .navbar-toggler {
+    color: #111;
+  }
+  .dropdown-menu {
+    display: none;
+    width: 100%;
+    text-align: center;
+  }
+  /* #navbar.nav-text-white .mobile-logo {
+    display: block;
+  }
+  #navbar.nav-text-white .hidden-logo {
+    display: none;
+  } */
+  .header-padding {
+    padding: 0px 30px;
+  }
+
+  .hero h1,
+  span,
+  a,
+  p {
+    text-align: center;
+  }
+  .hero p {
+    font-size: 16px;
+    text-align: center;
+    width: 70%;
+  }
+  .hrc {
+    display: flex;
+    justify-content: center;
+  }
+
+  .banner .block h1 {
+    font-size: 60px;
+    line-height: 70px;
+  }
+  .banner {
+    background: #fff !important;
+  }
+
+  .case-timeline-dot {
+    display: none;
+  }
+  .case-timeline-divider {
+    display: none;
+  }
+
+  .testimonial-wrap {
+    margin-left: 0px;
+  }
+
+  .blog-thumb {
+    width: 100%;
+    float: none;
+    margin-right: 0px;
+    margin-bottom: 15px;
+  }
+  .blog-thumb img {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .container-fluid {
+    padding: 1rem 3rem !important;
+  }
+  #navbar {
+    background: #fff;
+  }
+  #navbar .nav-link {
+    font-size: 32px;
+    padding: 3rem;
+  }
+  #navbar.nav-text-white .nav-link {
+    color: #111;
+  }
+  /* #navbar.nav-text-white .mobile-logo {
+    display: block;
+  }
+  #navbar.nav-text-white .hidden-logo {
+    display: none;
+  } */
+  .navbar-toggler {
+    color: #111;
+  }
+  .dropdown-menu {
+    display: none;
+    width: 100%;
+    text-align: center;
+  }
+  h2,
+  .h2 {
+    font-size: 1.3rem;
+    font-weight: 600;
+    line-height: 36px;
+  }
+
+  .header-padding {
+    padding: 0px 30px;
+  }
+
+  .row {
+    margin: 0 !important;
+  }
+  /* .banner .block h1 {
+    font-size: 38px;
+    line-height: 50px;
+  } */
+  .banner {
+    padding: 126px 0 151px 0;
+    background: #fff !important;
+  }
+
+  .about-item .content h4 {
+    font-size: 36px;
+  }
+  .about-item .content a {
+    font-size: 20px;
+  }
+  .about-item .content p {
+    font-size: 24px;
+    text-align: left;
+    width: 80%;
+  }
+
+  .case-timeline-dot {
+    display: none;
+  }
+  .case-timeline-divider {
+    display: none;
+  }
+
+  .testimonial-wrap {
+    margin-left: 0px;
+  }
+
+  .blog-thumb {
+    width: 100%;
+    float: none;
+    margin-right: 0px;
+    margin-bottom: 15px;
+  }
+  .blog-thumb img {
+    width: 100%;
+  }
+}
+@media (max-width: 400px) {
+  #navbar {
+    background: #fff;
+  }
+  #navbar.nav-text-white .nav-link {
+    color: #111;
+  }
+  /* #navbar.nav-text-white .mobile-logo {
+    display: block;
+  }
+  #navbar.nav-text-white .hidden-logo {
+    display: none;
+  } */
+  .navbar-toggler {
+    color: #111;
+  }
+  .dropdown-menu {
+    display: none;
+    width: 100%;
+    text-align: center;
+  }
+  .header-padding {
+    padding: 0px 30px;
+  }
+
+  /* .banner .block h1 {
+        font-size: 28px;
+        line-height: 40px;
+      } */
+  .banner {
+    padding: 126px 0 151px 0;
+    background: #fff !important;
+  }
+
+  .case-timeline-dot {
+    display: none;
+  }
+  .case-timeline-divider {
+    display: none;
+  }
+  .blog-thumb {
+    width: 100%;
+    float: none;
+    margin-right: 0px;
+    margin-bottom: 15px;
+  }
+  .blog-thumb img {
+    width: 100%;
+  }
+  .testimonial-wrap {
+    margin-left: 0px;
+  }
+}
