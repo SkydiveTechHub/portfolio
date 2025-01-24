@@ -114,6 +114,11 @@
     z-index: 1;
   }
 
+  .dropdown {
+    background: #fff;
+    padding: 0;
+  }
+
   .dropdown-item {
     height: 3rem;
     font-size: 1.2rem;
@@ -189,6 +194,14 @@
   .section .padding-left {
     width: 100%;
     padding: 1rem;
+  }
+
+  .counter-item h2 {
+    font-size: 25px;
+  }
+
+  .counter-item p {
+    font-size: 15px;
   }
 
   .footer .row {
