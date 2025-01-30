@@ -1177,7 +1177,7 @@ section.active {
   }
 
   .nav-2 .nav-2-container a {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     color: var(--white-color);
     font-weight: 100;
     margin-left: 0.5rem;
@@ -1211,7 +1211,7 @@ section.active {
   }
 
   .nav-2 .nav-2-container i {
-    font-size: 2.5rem;
+    font-size: 2.3rem;
     position: absolute;
     top: 5%;
     left: 30%;
