@@ -314,63 +314,60 @@ nextButton.addEventListener("click", () => {
   }
 });
 
-// Add click event for "Read More" buttons
-sliderItems.forEach((item) => {
-  const readMoreButton = item.querySelector(".read-more-btn");
-  readMoreButton.addEventListener("click", () => {
-    const blogContent = item.getAttribute("data-blog");
-    popupContent.textContent = blogContent;
-    popup.classList.add("show");
-  });
-});
-
-// Close popup event
-closePopup.addEventListener("click", () => {
-  popup.classList.remove("show");
-});
-
-// Close popup when clicking outside the popup content
-popup.addEventListener("click", (event) => {
-  if (event.target === popup) {
-    popup.classList.remove("show");
-  }
-});
-
 // Initialize the slider
 window.addEventListener("load", () => {
   updateSliderPosition();
   createPagination();
 });
 
+// Add click event for "Read More" buttons
+// sliderItems.forEach((item) => {
+//   const readMoreButton = item.querySelector(".read-more-btn");
+//   readMoreButton.addEventListener("click", () => {
+//     const blogContent = item.getAttribute("data-blog");
+//     popupContent.textContent = blogContent;
+//     popup.classList.add("show");
+//   });
+// });
+
+// Close popup event
+// closePopup.addEventListener("click", () => {
+//   popup.classList.remove("show");
+// });
+
+// Close popup when clicking outside the popup content
+// popup.addEventListener("click", (event) => {
+//   if (event.target === popup) {
+//     popup.classList.remove("show");
+//   }
+// });
+
 // Fetch all the Read More buttons
-const readMoreButtons = document.querySelectorAll(".read-more-btn");
+// const readMoreButtons = document.querySelectorAll(".read-more-btn");
 
 // Add click listeners to each button
-readMoreButtons.forEach((button) => {
-  button.addEventListener("click", (e) => {
-    const sliderItem = e.target.closest(".slider-item");
-    const blogContent = sliderItem.querySelector(
-      ".hidden-blog-content"
-    ).innerHTML;
+// readMoreButtons.forEach((button) => {
+//   button.addEventListener("click", (e) => {
+//     const sliderItem = e.target.closest(".slider-item");
+//     const blogContent = sliderItem.querySelector(
+//       ".hidden-blog-content"
+//     ).innerHTML;
 
-    const popup = document.querySelector(".blog-popup");
-    const popupContent = popup.querySelector(".blog-text");
+//     const popup = document.querySelector(".blog-popup");
+//     const popupContent = popup.querySelector(".blog-text");
 
-    // Set the popup content and show the popup
-    popupContent.innerHTML = blogContent; // Load the blog content
-    popup.style.display = "block"; // Display the popup
-  });
-});
+//     popupContent.innerHTML = blogContent;
+//     popup.style.display = "block";
+//   });
+// });
 
 // Close the popup when the close button is clicked
-const closePopupButton = document.querySelector(".close-popup");
-closePopupButton.addEventListener("click", () => {
-  const popup = document.querySelector(".blog-popup");
+// const closePopupButton = document.querySelector(".close-popup");
+// closePopupButton.addEventListener("click", () => {
+//   const popup = document.querySelector(".blog-popup");
 
-  // Hide the popup
-  popup.style.display = "none";
+//   popup.style.display = "none";
 
-  // Clear popup content to avoid lingering content when reopened
-  const popupContent = popup.querySelector(".blog-text");
-  popupContent.innerHTML = "";
-});
+//   const popupContent = popup.querySelector(".blog-text");
+//   popupContent.innerHTML = "";
+// });
